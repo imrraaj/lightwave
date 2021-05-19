@@ -1,10 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 80;
-
-let user = {};
-
+const PORT =  process. env. PORT||80;
 
 app.use('/static', express.static('static'));
 app.use(express.urlencoded());

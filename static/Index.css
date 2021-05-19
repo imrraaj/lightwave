@@ -223,7 +223,7 @@ span{
 
 
 .contact{
-/* background-image: url(./static/); */
+background-image: url(./static/contact.jpg);
 background-size: cover;
 height: 100vh;
 }

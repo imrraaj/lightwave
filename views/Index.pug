@@ -1,0 +1,150 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    style
+      include ../static/Index.css
+    title Lightwave Travels
+  body
+    header
+      a.logo(href='#')
+        | Travel
+        span .
+      .menuToggle( href="#places" onclick= "Togglemenu();")
+        ul(class="navbar")
+          li
+            a(href='#home') Home
+          li
+            a(href='#places') Places
+          li
+            a(href='#about') About Us
+          li
+            a(href='#testemonials') Testemonials
+          li
+            a(href='#contact') Contact
+    section#home.banner
+      .header
+        h2(class="hide")
+          | Travel the 
+          span Globe
+          br
+          |  with Us
+        p(class="hide")
+          | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam error, laudantium blanditiis recusandae
+          | culpa quae. Ducimus, voluptatem temporibus accusamus odio mollitia.
+        button.btn Explore More
+    section#about.about
+      .row
+        .col50
+          h2
+            span A
+            | bout Us
+          p
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, consectetur maxime eius voluptas
+            | vel placeat. Voluptatem soluta eligendi incidunt illo saepe possimus, excepturi deleniti aliquam
+            | sed, laboriosam nisi maiores obcaecati?
+            br
+            br
+            | Lorem ipsum dolor sit amet consectetur adipisicing
+            |                     elit. Voluptatem similique dolore sunt, nisi repellat nam officiis dignissimos deserunt, illum enim
+            |                     eaque aspernatur, dicta aliquid omnis aliquam iure fugiat cumque modi!Reiciendis asperiores
+            |                     praesentium velit porro. Minus laboriosam tempora eveniet incidunt eligendi magnam? Reprehenderit
+            |                     dolor corporis, laborum maxime rerum laboriosam nostrum quae blanditiis fugit vitae nesciunt autem
+            |                     sapiente, tenetur fuga velit?
+        .col50
+          .imgBx
+            img(src='../static/about.jpg')
+    section#places.places
+      .title
+        h2 
+          span Places 
+          | Visit
+        p
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, corporis magni explicabo ducimus vero enim
+          | maiores, labore illo inventore veniam id. Incidunt illum dolorem dolore? Eos ad aperiam dolore
+          | beatae.Voluptas ratione velit eos doloremque, iusto doloribus hic nesciunt alias soluta. Reprehenderit,
+          | quis distinctio porro nesciunt quae alias?
+      .content
+        .box
+          .imgBx
+            img(src='../static/card1.jpg' alt='')
+          .text India
+        .box
+          .imgBx
+            img(src='../static/card1.jpg' alt='')
+          .text India
+        .box
+          .imgBx
+            img(src='../static/card1.jpg' alt='')
+          .text India
+        .box
+          .imgBx
+            img(src='../static/card1.jpg' alt='')
+          .text India
+        .box
+          .imgBx
+            img(src='../static/card1.jpg' alt='')
+          .text India
+        .box
+          .imgBx
+            img(src='../static/card1.jpg' alt='')
+          .text India
+    section#contact.contact
+      .title
+        h2
+          span C
+          | ontact Us
+        p
+          | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id magnam laborum ex voluptatibus, amet est deleniti.
+      form.form(action="/query" method="POST")
+        h2 Send Messege 
+        .inputBox
+          input(type='text' name='name' placeholder='Your Name')
+        .inputBox
+          input(type='email' name='email' placeholder='Your Email')
+        .inputBox
+          textarea(name='query' placeholder='Your Query')
+        .inputBox
+          button.btn2(type="submit" action="/query" method="POST") Submit
+    .copyright
+      p 
+        | Copyright &copy; 
+        a(href="#") Lightwave Travels. 
+        | All Rights Reserved
+    script.
+      // let globe = document.getElementById('Globe');
+      // setInterval(() => {
+      //     if(globe.style.color == "white"){
+      //         globe.style.color = "lightcoral";
+      //     }
+      //     else {
+      //         globe.style.color = "white";
+      //     }
+      // }, 1500);
+      window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      header.classList.toggle("sticky", window.scrollY > 0);
+
+      })
+      function Togglemenu(){
+        const menuToggle = document.querySelector('.menuToggle');
+        menuToggle.classList.toggle("active");
+
+
+        //- const navi = document.querySelector('.navi');
+        const navbar = document.querySelector('.navbar');
+
+
+        navbar.classList.toggle('active');
+
+        const hide = document.querySelector('.hide');
+
+        if(hide.style.display == "none"){
+          hide.style.display = "block"
+        }
+        else{
+          hide.style.display = "none";
+        }
+
+      }

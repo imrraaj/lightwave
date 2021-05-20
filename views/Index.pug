@@ -3,16 +3,16 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    style
+    style(rel="preload")
       include ../static/Index.css
     title Lightwave Travels
   body
     header
-      a.logo(href='#')
+      a.logo(href='#' onclick= "togglemenu();")
         | Travel
         span .
-      .menuToggle( href="#places" onclick= "Togglemenu();")
-        ul(class="navbar")
+      .menuToggle(onclick= "togglemenu();")
+        ul(class="navbar" id="menulist")
           li
             a(href='#home') Home
           li
@@ -25,12 +25,12 @@ html(lang='en')
             a(href='#contact') Contact
     section#home.banner
       .header
-        h2(class="hide")
+        h2
           | Travel the 
           span Globe
           br
           |  with Us
-        p(class="hide")
+        p
           | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam error, laudantium blanditiis recusandae
           | culpa quae. Ducimus, voluptatem temporibus accusamus odio mollitia.
         button.btn Explore More
@@ -113,38 +113,20 @@ html(lang='en')
         a(href="#") Lightwave Travels. 
         | All Rights Reserved
     script.
-      // let globe = document.getElementById('Globe');
-      // setInterval(() => {
-      //     if(globe.style.color == "white"){
-      //         globe.style.color = "lightcoral";
-      //     }
-      //     else {
-      //         globe.style.color = "white";
-      //     }
-      // }, 1500);
       window.addEventListener('scroll', function () {
-      const header = document.querySelector('header');
-      header.classList.toggle("sticky", window.scrollY > 0);
+        const header = document.querySelector('header');
+        header.classList.toggle("sticky", window.scrollY > 0);
+          });
 
-      })
-      function Togglemenu(){
-        const menuToggle = document.querySelector('.menuToggle');
-        menuToggle.classList.toggle("active");
+        var menulist = document.getElementById('menulist')
+        menulist.style.display = "block";
 
-
-        //- const navi = document.querySelector('.navi');
-        const navbar = document.querySelector('.navbar');
-
-
-        navbar.classList.toggle('active');
-
-        const hide = document.querySelector('.hide');
-
-        if(hide.style.display == "none"){
-          hide.style.display = "block"
+        
+        function togglemenu(){
+            if(menulist.style.display == "none"){
+                menulist.style.display = "block"
+            }
+            else{
+                menulist.style.display = "none"
+            }
         }
-        else{
-          hide.style.display = "none";
-        }
-
-      }

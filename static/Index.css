@@ -2,8 +2,7 @@
     margin: 0;
     padding: 0%;
     font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    scroll-behavior:smooth;
-
+	scroll-behavior:smooth;
 }
 /* body{
     height: 1000px;
@@ -90,6 +89,7 @@ span{
     color:whitesmoke;
 }
 .header h2{
+    z-index: 1;
     line-height: 60px;
     font-size: 50px;
 }
@@ -138,8 +138,7 @@ span{
 .places .title p{
     margin: 0px 88px;
     padding-top: 40px;
-}
-
+} 
 .row{
     position: relative;
     width: 100%;
@@ -175,7 +174,6 @@ span{
     height: 100%;
     object-fit: cover;
 }
-
 .title{
     width: 100%;
     display: flex;
@@ -224,7 +222,7 @@ span{
 
 
 .contact{
-background-image: url(./static/contact.jpg);
+background-image: url(./static/hr2.jpg);
 background-size: cover;
 height: 100vh;
 }
@@ -232,11 +230,15 @@ height: 100vh;
     text-align: center;
 }
 .contact .title h2{
+    margin-top: 112px;
     font-size: 50px;
+    color: white;
 }
 .contact .title p{
     margin-top: 20px;
     margin: 0px 10px;
+    color: white;
+
 }
 .form{
     padding: 50px 50px;
@@ -245,7 +247,7 @@ height: 100vh;
     max-width: 400px;
     margin: 50px;
     margin-left: 50px;
-    /* height: 221px; */
+
 }
 .form h2{
     text-align: center;
@@ -259,15 +261,6 @@ height: 100vh;
     position: relative;
     width: 100%;
     margin-bottom: 20px;
-    /*
-    display: block;
-    margin: 31px;
-    padding: 11px;
-    border: 2px solid white;
-    border-radius: 3px;
-    background-color: white;
-    box-shadow: 0 5px 35px rgb(0 0 0 / 8%);
-    */
 }
 .form .inputBox input,
 .form .inputBox textarea
@@ -287,48 +280,17 @@ resize: none;
     font-size: 1em;
     color: white;
     background-color: lightcoral;
-    display: inline-block;
-    text-transform: uppercase;
-    text-decoration: none;
+    display: grid;
     transition: 0.4s;
     width: 80px;
-    font-weight: 500;
     border: none;
     cursor: pointer;
-    padding: 8px;
     border-radius: 2px;
-    margin-left: 150px;
     height: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
-
-/* .form textarea{
-    display: block;
-    margin: 31px;
-    padding: 11px;
-    border: 2px solid white;
-    border-radius: 3px;
-    background-color: white;
-    box-shadow: 0 5px 35px rgb(0 0 0 / 8%);
-    width: 420px;
-    height: 70px;
-} */
-/* .form .btn{
-    position: absolute;
-    height: 40px;
-    width: 99px;
-    padding: 3px;
-    margin-left: 50px;
-    background: black;
-    outline: none;
-    border-radius: 3px;
-    color: lightblue;
-    border: 2px solid white;
-    transition: 0.4s ease;
-    top: 82%;
-    left: 20%;
-}
-*/
-
 .form .btn2:hover{
     color: lightcoral;
     background:white;
@@ -351,38 +313,27 @@ resize: none;
     font-weight: bold;
 }
 
-
-
-@media (max-width:777px)
-{
-    /* .navbar li {
-        margin: 0px 5px;
-    } */
-    header .navbar
+@media (max-width:777px){
+    
+    .navbar{
+        padding: 23px 36px;
+        background: white;
+        height: 25vh;
+        top: 70px;
+        right: 0%;
+        border-radius: 5px;
+    }
+    .navbar li{
+        display: block;
+        margin: 14px 0px;
+    }
+    .navbar li a
     {
-        display: none;
-    }
-   header .navbar.active,
-   header.sticky .navbar.active
-   {
-    width: 106vw;
-    height: 100vh;
-    top: 62px;
-    left: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: white;
-    }
-    header .navbar li {
-        display: inline-block;
-        margin: 0px 10px;
-        margin: 10px 0px;
-    }
-    .navbar li a{
-        font-size: 20px;
         color: black;
+    }
+    .navbar li a:hover
+    {
+        color: lightcoral;
     }
     .menuToggle{
         position: absolute;
@@ -392,32 +343,16 @@ resize: none;
         background-size: 50px;
         top: 9px;
         right: 24px;
-        /* filter: invert(1); */
         background-repeat: no-repeat;
         background-position: center;
         cursor: pointer;
 
     }
-    /* .sticky .menuToggle{
-        filter: invert(0);
-    } */
-    .menuToggle.active
-    {
-        position: absolute;
-        width: 36px;
-        height: 45px;
-        background: url(./static/close.png);
-        background-size: 26px;
-        top: 9px;
-        right: 24px;
-        /* filter: invert(1); */
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-        z-index: -1;
+    .row .col50 .imgBx img{
+        display: none;
     }
-    /* .sticky .menuToggle.active{
-        filter: invert(0);
-    } */
-
+    .row .col50{
+        position: relative;
+        height: 557px;
+    }
 }

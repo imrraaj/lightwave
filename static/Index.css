@@ -348,6 +348,16 @@ resize: none;
         cursor: pointer;
 
     }
+    .row{
+        position: relative;
+        width: 100%;
+        display: block;
+        /* justify-content: space-between; */
+    }
+    .col50 p{
+        display: block;
+        width: 500px;
+    }
     .row .col50 .imgBx img{
         display: none;
     }
